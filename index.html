@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>数くらべシューティング</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="menu" class="menu-container">
+    <h1 class="game-title">数くらべシューティング</h1>
+
+    <div class="section">
+      <h2 class="section-title">①もんだいの種類</h2>
+      <div id="typeButtons" class="button-row">
+        <button class="select-button" data-type="integer">数のくらべ (整数)</button>
+        <button class="select-button" data-type="decimal">数のくらべ (小数)</button>
+        <button class="select-button" data-type="fraction">数のくらべ (分数)</button>
+        <button class="select-button" data-type="all">数のくらべ (ぜんぶ)</button>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2 class="section-title">②モードをえらぶ</h2>
+      <div id="modeButtons" class="button-row">
+        <button class="select-button" data-mode="じっくりモード">じっくりモード</button>
+        <button class="select-button" data-mode="ガンガンモード">ガンガンモード</button>
+      </div>
+    </div>
+
+    <div class="section">
+        <h2 class="section-title">③むずかしさをえらぶ</h2>
+        <div id="difficultyButtons" class="button-row">
+          <button class="select-button" data-difficulty="easy">かんたん</button>
+          <button class="select-button" data-difficulty="normal">ふつう</button>
+          <button class="select-button" data-difficulty="hard">むずかしい</button>
+        </div>
+      </div>
+      
+
+    <button id="startButton" class="start-button">③スタート！</button>
+  </div>
+  <div id="scoreDisplay">スコア: 0</div>
+
+  <canvas id="gameCanvas"></canvas>
+
+  <div id="result" class="result-container" style="display: none;">
+    <div class="score-card">
+      <h2>ゲーム終了！</h2>
+      <div id="finalScore" class="score-details"></div>
+      <button onclick="location.reload()">もう一度プレイ</button>
+    </div>
+  </div>
+
+  <div id="quitButton" class="quit-button" style="display: none;">
+    <button onclick="showResult()">やめる</button>
+  </div>
+
+  <!-- 音声読み込み -->
+  <audio id="seShoot" src="shoot.mp3"></audio>
+  <audio id="seCorrect" src="correct.mp3"></audio>
+  <audio id="seWrong" src="wrong.mp3"></audio>
+  <audio id="seStart" src="start.mp3"></audio>
+
+  <script src="main.js"></script>
+</body>
+</html>
+
